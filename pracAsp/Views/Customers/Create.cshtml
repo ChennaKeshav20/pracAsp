@@ -1,0 +1,27 @@
+﻿@using pracAsp.Models
+@model Customer
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create new Customer</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    <div class="mb-2">
+        @Html.LabelFor(p => p.Name, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.Name)
+    </div>
+    <div class="mb-2">
+        @Html.LabelFor(p => p.MobileNo, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.MobileNo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.MobileNo)
+    </div>
+    
+    
+
+    <div class="mt-2">
+        <input type="submit" id="btnsubmit" class="btn btn-primary" value="submit" />
+    </div>
+}

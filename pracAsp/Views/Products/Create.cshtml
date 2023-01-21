@@ -1,0 +1,30 @@
+﻿@using pracAsp.Models
+@model Product
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create new product</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    <div class="mb-2">
+        @Html.LabelFor(p => p.ProductName, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.ProductName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.ProductName)
+    </div>
+    <div class="mb-2">
+        @Html.LabelFor(p => p.Price, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.Price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.Price)
+    </div>
+    <div class="mb-2">
+        @Html.LabelFor(p => p.Quantity, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.Quantity, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.Quantity)
+    </div>
+    
+    <div class="mt-2">
+        <input type="submit" id="btnsubmit" class="btn btn-primary" value="submit" />
+    </div>
+}
